@@ -82,6 +82,53 @@ section h2, footer h2 {
 .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--ink-soft); }
 .legend-swatch { width: 12px; height: 12px; border-radius: 3px; flex: none; }
 
+/* ---------- Theme bars ---------- */
+.theme-row {
+  display: grid; grid-template-columns: minmax(180px, 290px) 1fr 44px;
+  align-items: center; gap: 12px; margin-bottom: 8px;
+}
+.theme-label { font-size: 0.84rem; color: var(--ink-soft); line-height: 1.25; }
+.theme-row.muted .theme-label, .theme-row.muted .theme-pct { color: var(--ink-faint); }
+.theme-bar { height: 16px; background: var(--unsure); border-radius: 5px; overflow: hidden; }
+.theme-fill { height: 100%; border-radius: 5px; }
+.theme-pct { font-size: 0.84rem; font-weight: 700; text-align: right; }
+
+/* ---------- Quote cards ---------- */
+.quote-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px; margin-top: 26px;
+}
+.quote-card {
+  margin: 0; background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px 20px;
+  border-left: 4px solid var(--neutral);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.quote-card.support { border-left-color: var(--support-strong); }
+.quote-card.oppose { border-left-color: var(--oppose-strong); }
+.quote-card.experience { border-left-color: #3d5a99; }
+.quote-card blockquote {
+  margin: 0 0 14px; font-size: 0.95rem; line-height: 1.55; color: var(--ink);
+}
+.quote-card figcaption { font-size: 0.78rem; color: var(--ink-faint); }
+.quote-chip {
+  display: inline-block; font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 2px 9px; border-radius: 999px; margin-right: 7px;
+  background: var(--unsure); color: var(--ink-soft);
+}
+.quote-card.support .quote-chip { background: #e2f3ef; color: var(--support-strong); }
+.quote-card.oppose .quote-chip { background: #fbe9df; color: var(--oppose-strong); }
+.quote-card.experience .quote-chip { background: #e8ecf5; color: #3d5a99; }
+
+/* ---------- Stat callouts ---------- */
+.stat-callouts { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 24px; }
+.stat-callout { min-width: 130px; }
+.stat-num { font-size: 1.9rem; font-weight: 700; color: var(--accent); line-height: 1.1; }
+.stat-cap { font-size: 0.8rem; color: var(--ink-soft); max-width: 170px; }
+
+#why .seg-buttons { margin-bottom: 18px; }
+
 /* ---------- Message cards ---------- */
 .message-cards { display: grid; gap: 18px; }
 .message-card {
@@ -143,4 +190,6 @@ footer p { font-size: 0.85rem; color: var(--ink-soft); max-width: 720px; }
 @media (max-width: 560px) {
   .bar-seg { font-size: 0; }
   .net-pair { gap: 16px; }
+  .theme-row { grid-template-columns: 1fr 52px; }
+  .theme-label { grid-column: 1 / -1; margin-bottom: -2px; }
 }

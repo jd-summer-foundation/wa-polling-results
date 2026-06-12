@@ -128,6 +128,113 @@
     fmt(D.SHWA23.segments.gender[1].values["NET: Support"]) +
     "</strong>), but even the lowest-supporting groups remain above 70% support.";
 
+  /* ---------- Qualitative: shared renderers ---------- */
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function renderThemeBars(container, items, color) {
+    // items: [{label, pct}], pct already 0–100
+    container.innerHTML = "";
+    const max = Math.max(...items.map((i) => i.pct));
+    for (const item of items) {
+      const row = document.createElement("div");
+      row.className = "theme-row" + (item.muted ? " muted" : "");
+      const fill = document.createElement("div");
+      fill.className = "theme-fill";
+      fill.style.width = (item.pct / max) * 100 + "%";
+      fill.style.background = item.muted ? "var(--neutral)" : color;
+      row.innerHTML =
+        "<span class='theme-label'>" + esc(item.label) + "</span>" +
+        "<span class='theme-bar'></span>" +
+        "<span class='theme-pct'>" + item.pct.toFixed(0) + "%</span>";
+      row.querySelector(".theme-bar").appendChild(fill);
+      container.appendChild(row);
+    }
+  }
+
+  function renderQuotes(container, quotes) {
+    container.innerHTML = "";
+    for (const q of quotes) {
+      const card = document.createElement("figure");
+      card.className = "quote-card " + (q.stanceGroup || "experience");
+      const chip = q.stance || q.connection || "";
+      card.innerHTML =
+        "<blockquote>“" + esc(q.text) + "”</blockquote>" +
+        "<figcaption><span class='quote-chip'>" + esc(chip) + "</span> " +
+        esc(q.who) + "</figcaption>";
+      container.appendChild(card);
+    }
+  }
+
+  /* ---------- Why people support or oppose (SHWA23b) ---------- */
+  const WHY = D.QUAL_WHY;
+  const WHY_GROUPS = [
+    { id: "all", label: "All responses" },
+    { id: "support", label: "Supporters" },
+    { id: "neutral", label: "Neutral" },
+    { id: "oppose", label: "Opposers" },
+  ];
+  const whyToggle = document.getElementById("why-toggle");
+  let whyGroup = "all";
+
+  for (const g of WHY_GROUPS) {
+    const btn = document.createElement("button");
+    btn.textContent = g.label + " (n=" + WHY.totals[g.id] + ")";
+    btn.dataset.group = g.id;
+    if (g.id === whyGroup) btn.classList.add("active");
+    btn.addEventListener("click", () => {
+      whyGroup = g.id;
+      whyToggle.querySelectorAll("button").forEach((b) =>
+        b.classList.toggle("active", b.dataset.group === whyGroup));
+      renderWhyThemes();
+    });
+    whyToggle.appendChild(btn);
+  }
+
+  function renderWhyThemes() {
+    const total = WHY.totals[whyGroup];
+    const ranked = WHY.themes
+      .map((t) => ({ label: t.label, count: t.counts[whyGroup] }))
+      .filter((t) => t.count > 0)
+      .sort((a, b) => b.count - a.count);
+    const top = ranked.slice(0, 9);
+    const rest = ranked.slice(9).reduce((s, t) => s + t.count, 0);
+    const items = top.map((t) => ({ label: t.label, pct: (t.count / total) * 100 }));
+    if (rest > 0) {
+      items.push({ label: "All other themes", pct: (rest / total) * 100, muted: true });
+    }
+    const color = whyGroup === "oppose" ? "var(--oppose-strong)" : "var(--accent)";
+    renderThemeBars(document.getElementById("why-themes"), items, color);
+    document.getElementById("why-caveat").hidden = total >= 70;
+  }
+  renderWhyThemes();
+  renderQuotes(document.getElementById("why-quotes"), WHY.quotes);
+
+  /* ---------- Living in homes that don't fit (SHWA_D1a) ---------- */
+  const HOME = D.QUAL_HOME;
+  const homeStats = document.getElementById("home-stats");
+  const statPicks = [
+    ["Home modifications already made", "had already modified their home"],
+    ["Steps, stairs, thresholds and entry access", "mentioned steps or entry barriers"],
+    ["Narrow doors, corridors and awkward layouts", "mentioned narrow doors or corridors"],
+  ];
+  for (const [label, caption] of statPicks) {
+    const t = HOME.themes.find((x) => x.label === label);
+    if (!t) continue;
+    const el = document.createElement("div");
+    el.className = "stat-callout";
+    el.innerHTML = "<div class='stat-num'>" + Math.round(t.pct) + "%</div>" +
+      "<div class='stat-cap'>" + esc(caption) + "</div>";
+    homeStats.appendChild(el);
+  }
+  renderThemeBars(
+    document.getElementById("home-themes"),
+    HOME.themes.map((t) => ({ label: t.label, pct: t.pct })),
+    "var(--accent)"
+  );
+  renderQuotes(document.getElementById("home-quotes"), HOME.quotes);
+
   /* ---------- Message cards ---------- */
   const CARDS = [
     {

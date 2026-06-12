@@ -31,7 +31,11 @@ Enable GitHub Pages for this repository (Settings → Pages), serving from the
 
 ## Notes
 
-- The dashboard currently covers the quantitative questions (SHWA23–26 and the
-  disability-connection demographic). Qualitative open-ended responses
-  (SHWA23b, SHWA_D1a) are not yet included.
+- The dashboard covers the quantitative questions (SHWA23–26 and the
+  disability-connection demographic) plus the qualitative open-enders:
+  coded "why" themes with a stance toggle (SHWA23b), home-accessibility
+  experience themes (SHWA_D1a), and curated verbatim quotes. Quote curation
+  lives in `scripts/extract_data.py` (`WHY_QUOTES` / `HOME_QUOTES`), which
+  pulls quote text from the workbook by source row and asserts every excerpt
+  matches the verbatim response.
 - Subgroups with n<50 are flagged in the UI and should be interpreted with caution.

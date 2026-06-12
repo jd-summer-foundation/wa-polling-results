@@ -889,5 +889,331 @@ window.POLL_DATA = {
         }
       ]
     }
+  },
+  "QUAL_WHY": {
+    "totals": {
+      "all": 718,
+      "support": 588,
+      "neutral": 65,
+      "oppose": 65
+    },
+    "themes": [
+      {
+        "label": "Accessibility, inclusion and universal design",
+        "counts": {
+          "all": 263,
+          "support": 259,
+          "neutral": 2,
+          "oppose": 2
+        }
+      },
+      {
+        "label": "Ageing and future-proofing homes",
+        "counts": {
+          "all": 83,
+          "support": 81,
+          "neutral": 1,
+          "oppose": 1
+        }
+      },
+      {
+        "label": "Disability and mobility needs",
+        "counts": {
+          "all": 72,
+          "support": 71,
+          "neutral": 1,
+          "oppose": 0
+        }
+      },
+      {
+        "label": "Unclear or mixed rationale",
+        "counts": {
+          "all": 62,
+          "support": 37,
+          "neutral": 16,
+          "oppose": 9
+        }
+      },
+      {
+        "label": "General common-sense benefit",
+        "counts": {
+          "all": 59,
+          "support": 54,
+          "neutral": 2,
+          "oppose": 3
+        }
+      },
+      {
+        "label": "Cost, affordability and buyer burden",
+        "counts": {
+          "all": 44,
+          "support": 12,
+          "neutral": 13,
+          "oppose": 19
+        }
+      },
+      {
+        "label": "Minimum standards, safety and WA catching up",
+        "counts": {
+          "all": 32,
+          "support": 28,
+          "neutral": 2,
+          "oppose": 2
+        }
+      },
+      {
+        "label": "Design, space or practicality concerns",
+        "counts": {
+          "all": 22,
+          "support": 9,
+          "neutral": 7,
+          "oppose": 6
+        }
+      },
+      {
+        "label": "Government overreach or forced regulation",
+        "counts": {
+          "all": 17,
+          "support": 4,
+          "neutral": 5,
+          "oppose": 8
+        }
+      },
+      {
+        "label": "Personal choice and property rights",
+        "counts": {
+          "all": 16,
+          "support": 7,
+          "neutral": 3,
+          "oppose": 6
+        }
+      },
+      {
+        "label": "Personal experience or empathy",
+        "counts": {
+          "all": 15,
+          "support": 7,
+          "neutral": 5,
+          "oppose": 3
+        }
+      },
+      {
+        "label": "Rights, fairness and social responsibility",
+        "counts": {
+          "all": 12,
+          "support": 11,
+          "neutral": 0,
+          "oppose": 1
+        }
+      },
+      {
+        "label": "Low salience, insufficient information or no clear view",
+        "counts": {
+          "all": 7,
+          "support": 1,
+          "neutral": 6,
+          "oppose": 0
+        }
+      },
+      {
+        "label": "Prefer targeted or optional requirements",
+        "counts": {
+          "all": 6,
+          "support": 2,
+          "neutral": 1,
+          "oppose": 3
+        }
+      },
+      {
+        "label": "Low-cost change, value or resale benefit",
+        "counts": {
+          "all": 4,
+          "support": 4,
+          "neutral": 0,
+          "oppose": 0
+        }
+      },
+      {
+        "label": "Limited need or market demand concern",
+        "counts": {
+          "all": 4,
+          "support": 1,
+          "neutral": 1,
+          "oppose": 2
+        }
+      }
+    ],
+    "quotes": [
+      {
+        "text": "Both of my parents and many of our family friends were paraplegic. The limitations caused by poor planning caused excessive difficulty for them.",
+        "stance": "Strongly support",
+        "stanceGroup": "support",
+        "theme": "Personal experience or empathy",
+        "who": "Man, 50-59, Perth metro"
+      },
+      {
+        "text": "As a disabled person any assistance towards easier living is a bonus and seems a no brainer",
+        "stance": "Strongly support",
+        "stanceGroup": "support",
+        "theme": "Disability and mobility needs",
+        "who": "Woman, 70+, Perth metro"
+      },
+      {
+        "text": "Aging population. Need to prioritise people aging at home. Reduces the burden on aged care facilities. If people remain at home many of these items need to be retro fitted at greater cost",
+        "stance": "Strongly support",
+        "stanceGroup": "support",
+        "theme": "Ageing and future-proofing homes",
+        "who": "Man, 60-69, regional WA"
+      },
+      {
+        "text": "It makes complete sense and makes society more equitable. … We are a nation with reasonable resources and this is very much a fair concession.",
+        "stance": "Strongly support",
+        "stanceGroup": "support",
+        "theme": "Rights, fairness and social responsibility",
+        "who": "Man, 30-39, Perth metro"
+      },
+      {
+        "text": "Enables people to stay in their homes longer. Cheaper than retro fitting",
+        "stance": "Strongly support",
+        "stanceGroup": "support",
+        "theme": "Low-cost change, value or resale benefit",
+        "who": "Man, 50-59, Perth metro"
+      },
+      {
+        "text": "Because it makes more homes attractive to either elderly or disabled people from purchasing them especially given that we have a shortage of housing at the moment.",
+        "stance": "Strongly support",
+        "stanceGroup": "support",
+        "theme": "Disability and mobility needs",
+        "who": "Woman, 60-69, Perth metro"
+      },
+      {
+        "text": "In general it is a good idea that more houses are liveable for a greater proportion of the population. The reason I’m not “strongly supportive” is I’m not sure what cost implications there could be to comply with the code for “all” new homes",
+        "stance": "Somewhat support",
+        "stanceGroup": "support",
+        "theme": "Minimum standards, safety and WA catching up",
+        "who": "Man, 30-39, Perth metro"
+      },
+      {
+        "text": "A person should be free to design their home to their personal preference. It’s their money they’re spending",
+        "stance": "Somewhat oppose",
+        "stanceGroup": "oppose",
+        "theme": "Cost, affordability and buyer burden",
+        "who": "Man, 50-59, Perth metro"
+      },
+      {
+        "text": "Introducing more and more rules only pushes up the price of housing. Why not let people build to the requirement 'they' want. …",
+        "stance": "Strongly oppose",
+        "stanceGroup": "oppose",
+        "theme": "Cost, affordability and buyer burden",
+        "who": "Man, 70+, regional WA"
+      }
+    ]
+  },
+  "QUAL_HOME": {
+    "total": 221,
+    "themes": [
+      {
+        "label": "Home modifications already made",
+        "count": 91,
+        "pct": 41.2
+      },
+      {
+        "label": "Steps, stairs, thresholds and entry access",
+        "count": 89,
+        "pct": 40.3
+      },
+      {
+        "label": "Narrow doors, corridors and awkward layouts",
+        "count": 54,
+        "pct": 24.4
+      },
+      {
+        "label": "Bathroom, toilet and shower barriers",
+        "count": 51,
+        "pct": 23.1
+      },
+      {
+        "label": "Ramps, handrails and grab rails",
+        "count": 51,
+        "pct": 23.1
+      },
+      {
+        "label": "Wheelchair, walker or mobility-aid access",
+        "count": 42,
+        "pct": 19.0
+      },
+      {
+        "label": "Currently accessible / no modification issue",
+        "count": 42,
+        "pct": 19.0
+      },
+      {
+        "label": "Cost, rental, funding or approval constraints",
+        "count": 38,
+        "pct": 17.2
+      },
+      {
+        "label": "Ageing / future-proofing concerns",
+        "count": 37,
+        "pct": 16.7
+      },
+      {
+        "label": "Unable to visit, stay, shower or remain at home",
+        "count": 9,
+        "pct": 4.1
+      },
+      {
+        "label": "Sensory, hearing, cognitive or other access needs",
+        "count": 8,
+        "pct": 3.6
+      },
+      {
+        "label": "Two-storey or internal stair problems",
+        "count": 5,
+        "pct": 2.3
+      }
+    ],
+    "quotes": [
+      {
+        "text": "3 bedroom ex homes west house. 4 steps front &  back  impossible for husbands wheelchair. Narrow corridor  and corners . We can no longer live in our own home as result.",
+        "connection": "Cares for someone with a disability",
+        "who": "Woman, 70+, regional WA"
+      },
+      {
+        "text": "I have MS, and I have had some modifications done to the house, but nothing major. When I had to use the wheelchair, I wasn’t able to use it in the house, as the passages, doorways etc aren’t wide enough.",
+        "connection": "Living with a disability",
+        "who": "Woman, 50-59, Perth metro"
+      },
+      {
+        "text": "Both showers have a step which means my mother if she stays over can not shower in our house. … There are steps in both the front and back of the house …",
+        "connection": "Close to someone with a disability",
+        "who": "Man, 50-59, Perth metro"
+      },
+      {
+        "text": "I have a house that was built in 1945, the doorways are quite narrow, if I were to use crutches when my knee finally gives out, or end up in a wheelchair from my back a bit earlier than expected, then I could no longer live here. … My niece's unit in Perth is an older type build, my sister can not visit her as the wheelchair doesn't fit.",
+        "connection": "Living with a disability",
+        "who": "Woman, 50-59, regional WA"
+      },
+      {
+        "text": "It is not at all accessible has steps at the entry just inside and stairs to the upper rooms, I cannot find another home that is more accessible. …",
+        "connection": "Living with a disability",
+        "who": "Woman, 60-69, Perth metro"
+      },
+      {
+        "text": "I have a mortgage on a home we chose because it required minimal modification to make it suitable for my wheelchair. Wider corridors, wide doorways, and open living spaces. … the standards will also benefit so many others.",
+        "connection": "Living with a disability",
+        "who": "Woman, 60-69, regional WA"
+      },
+      {
+        "text": "Any modifications to my grandparents house was done by my grandfather as the need arose. There is now a ramp and rail on the back door … They no longer use the front door due to the steps. My rental is built up off the ground with steeps steps, so my grandparents cannot visit. …",
+        "connection": "Living with a disability",
+        "who": "Woman, 30-39, Perth metro"
+      },
+      {
+        "text": "Wider internal doorways, but no doors. Shower area and toilet are integrated into the same space … The design was to ensure elderly and potentially wheel chair bound people could use the house without restriction due to size or openings. No modifications required.",
+        "connection": "Cares for someone with a disability",
+        "who": "Man, 50-59, regional WA"
+      }
+    ]
   }
 };
