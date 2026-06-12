@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WA Accessible Housing Poll — June 2026</title>
+<meta name="description" content="Polling of 762 Western Australians on adopting the liveable housing design standard, June 2026.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero-kicker">WA Accessible Housing Poll &middot; June 2026 &middot; n=762</p>
+  <h1><span class="hero-number" id="hero-net">78%</span> of Western Australians support adopting the liveable housing design standard</h1>
+  <p class="hero-sub">Half of all respondents (<strong id="hero-strong">50%</strong>) <em>strongly</em> support the WA Government adopting the standard for new homes. Just <strong id="hero-oppose">9%</strong> are opposed.</p>
+  <div class="hero-chips" id="hero-chips"></div>
+</header>
+
+<main>
+
+<section id="overall">
+  <h2>Overall support</h2>
+  <p class="section-lead">Respondents were told the National Construction Code has included a liveable housing design standard since 2022 — features like step-free entry and wider internal doors and corridors — and asked whether they support the WA Government adopting it as a minimum standard for new homes.</p>
+  <div id="overall-chart"></div>
+  <p class="finding" id="overall-finding"></p>
+</section>
+
+<section id="messages">
+  <h2>How arguments shift support</h2>
+  <p class="section-lead">Respondents heard three arguments about the standard and were asked whether each made them more or less likely to support WA adopting it.</p>
+  <div class="message-cards" id="message-cards"></div>
+</section>
+
+<section id="explore">
+  <h2>Dig deeper</h2>
+  <p class="section-lead">Break any question down by demographic group.</p>
+  <div class="controls">
+    <div class="control">
+      <label for="q-select">Question</label>
+      <select id="q-select"></select>
+    </div>
+    <div class="control">
+      <label>Break down by</label>
+      <div class="seg-buttons" id="seg-buttons"></div>
+    </div>
+  </div>
+  <p class="explore-question" id="explore-question"></p>
+  <div id="explore-chart"></div>
+  <div class="legend" id="explore-legend"></div>
+  <p class="caveat-note" id="caveat-note" hidden>&dagger; Small sample size (n&lt;50) — interpret with caution.</p>
+</section>
+
+</main>
+
+<footer>
+  <h2>About this poll</h2>
+  <p>Survey of n=762 Western Australian adults (607 Perth metro, 155 regional WA), conducted June 2026 for Shelter WA. Respondents were asked about the liveable housing design standard in the National Construction Code, which includes features such as step-free entry and wider internal doors and corridors to make homes easier to access and use for older people and people with disability.</p>
+  <p>Figures are percentages of each group and may not sum to 100 due to rounding. The maximum margin of error on the full sample is approximately &plusmn;3.6% at the 95% confidence level; margins are larger for subgroups. Results for groups with fewer than 50 respondents are flagged and should be interpreted with caution.</p>
+  <p>29% of respondents reported a personal connection to disability — living with a disability themselves (11%), caring for someone with a disability (6%), or having someone close to them with a disability (18%).</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
