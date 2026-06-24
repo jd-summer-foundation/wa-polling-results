@@ -311,11 +311,14 @@ def chart_netscore(tables, group_n, outdir):
 def chart_heatmap(tables, group_n, outdir):
     groups = _groups_for_chart(group_n)
     tps = list(TALKING_POINTS)
-    mat = np.array([[net_scores(tables[tp][s], group_n[s])["more"]
+    # Net score (% more likely − % less likely), consistent with figs 1 & 2.
+    mat = np.array([[net_scores(tables[tp][s], group_n[s])["net"]
                      for tp in tps] for s in groups])
     import textwrap
+    from matplotlib.colors import TwoSlopeNorm
+    norm = TwoSlopeNorm(vmin=-50, vcenter=0, vmax=90)
     fig, ax = plt.subplots(figsize=(8.5, 6.2))
-    im = ax.imshow(mat, cmap="Greens", vmin=0, vmax=100, aspect="auto")
+    im = ax.imshow(mat, cmap="RdYlGn", norm=norm, aspect="auto")
     ax.set_xticks(range(len(tps)))
     ax.set_xticklabels(
         [f"{tp}\n" + "\n".join(textwrap.wrap(TALKING_POINTS[tp], 20)) for tp in tps],
@@ -327,15 +330,15 @@ def chart_heatmap(tables, group_n, outdir):
     for i in range(len(groups)):
         for j in range(len(tps)):
             v = mat[i, j]
-            ax.text(j, i, f"{v:.0f}%", ha="center", va="center",
-                    color="white" if v > 55 else "black", fontsize=10)
-    ax.set_title("% 'more likely to support' (NET) by initial support level",
+            ax.text(j, i, f"{v:+.0f}", ha="center", va="center",
+                    color="white" if (v > 60 or v < -35) else "black", fontsize=10)
+    ax.set_title("Net persuasion (% more − % less likely) by initial support level",
                  fontsize=12, fontweight="bold")
-    fig.colorbar(im, ax=ax, label="% more likely", shrink=0.8)
+    fig.colorbar(im, ax=ax, label="Net score (negative = less likely)", shrink=0.8)
     fig.text(0.5, 0.005, "* n<50, directional only. Unweighted n=762.",
              ha="center", fontsize=8, color="#666")
     fig.tight_layout(rect=[0, 0.06, 1, 1])
-    p = os.path.join(outdir, "fig3_heatmap_more_likely.png")
+    p = os.path.join(outdir, "fig3_heatmap_net_score.png")
     fig.savefig(p, dpi=150, bbox_inches="tight")
     plt.close(fig)
     return p
